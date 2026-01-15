@@ -25,9 +25,11 @@ namespace pr18_elik.Pages
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
+       
 
+        private void Search(object sender, RoutedEventArgs e)
+        {
+            MainWindow.init.OpenPage(new Pages.Ticket(from.Text, to.Text));
         }
     }
 }

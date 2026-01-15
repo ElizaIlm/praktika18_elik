@@ -8,13 +8,41 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Main">
 
-    <Grid Background="#FF0C73FE">
-        <Label Content="Поиск дешёвых авиабилетов" HorizontalAlignment="Center" Margin="0,111,0,0" VerticalAlignment="Top" FontSize="16" Foreground="White" FontWeight="Bold" />
-        <Label Content="Лучший способ купить авиабилеты дешего" HorizontalAlignment="Left" Margin="278,147,0,0" VerticalAlignment="Top" Foreground="White" />
-        <Label Content="Откуда:" HorizontalAlignment="Left" Margin="280,185,0,0" VerticalAlignment="Top" FontSize="16" Foreground="White" />
-        <Label Content="Куда:" HorizontalAlignment="Left" Margin="280,249,0,0" VerticalAlignment="Top" FontSize="16" Foreground="White" />
-        <TextBox HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240" Height="28" Margin="0,217,0,0"/>
-        <Button Content="Найти"  HorizontalAlignment="Right"  Margin="0,313,280,0" VerticalAlignment="Top" Width="93"  Height="25" Background="#FFFF4000" Foreground="White" BorderBrush="#FFFF4000"/>
-        <TextBox HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240" Height="28" Margin="0,280,0,0"/>
+    <Grid Background="#FF0C73FE" Margin="0,10,10,0">
+  
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="300">
+
+            <TextBlock Text="Поиск дешёвых авиабилетов"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       Foreground="White"
+                       TextAlignment="Center"
+                       Margin="0,0,0,10"/>
+            <TextBlock Text="Лучший способ купить авиабилеты дешево"
+                       Foreground="White"
+                       TextAlignment="Center"
+                       Margin="0,0,0,20"/>
+            <TextBlock Text="Откуда:" 
+                       Foreground="White" 
+                       Margin="0,0,0,5"/>
+            <TextBox Height="28" 
+                     TextWrapping="Wrap" 
+                     Padding="5" x:Name="from"/>
+            <TextBlock Text="Куда:" 
+                       Foreground="White" 
+                       Margin="0,15,0,5"/>
+            <TextBox Height="28" 
+                     TextWrapping="Wrap" 
+                     Padding="5" x:Name="to"/>
+            <Button Content="Найти" 
+                    Height="26"
+                    Width="100"
+                    Margin="0,20,-200,0"
+                    Background="#FFFF4000" 
+                    Foreground="White" 
+                    BorderBrush="#FFFF4000"
+                    HorizontalAlignment="Stretch" Click="Search" />
+            
+        </StackPanel>
     </Grid>
 </Page>
