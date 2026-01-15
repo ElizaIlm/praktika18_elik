@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:pr18_elik"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="700">
+        Title="Управление авиалиниями" Height="450" Width="700">
     <Grid>
-        
+        <Grid Height="60" VerticalAlignment="Top" Background="#FF0C73FE">
+            <Image Width="45" Height="44" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="8,0,0,0" Source="/image/i.png"/>
+            <Label VerticalAlignment="Top" HorizontalAlignment="Left" Content="Управление авиалиниями" Foreground="White" Margin="65,12,0,0" FontSize="16"/>
+            <Button VerticalAlignment="Center" HorizontalAlignment="Left" Width="100" Height="24" Content="Выйти" Margin="590,0,0,0" BorderBrush="White" Foreground="#FF262222" FontWeight="Bold" FontSize="16" Background="White"/>
+        </Grid>
+        <Frame x:Name="frame" NavigationUIVisibility="Hidden" Margin="0,60,-0.4,0" />
     </Grid>
 </Window>
