@@ -34,7 +34,7 @@
 
                 <!-- ЛЕВО: цена + кнопка -->
                 <StackPanel Grid.Column="0" VerticalAlignment="Top">
-                    <TextBlock Text="1999 ₽" 
+                    <TextBox Text="1999 ₽" x:Name="lPrice" 
                                FontSize="24" 
                                FontWeight="Bold" 
                                HorizontalAlignment="Center"/>
@@ -47,18 +47,18 @@
                 <Grid Grid.Column="1" Grid.ColumnSpan="2" Margin="25,0,10,0">
                     <!-- Отправление -->
                     <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left">
-                        <TextBlock Text="Победа" FontSize="14" Foreground="Gray"/>
-                        <TextBlock Text="05:00" FontSize="16" FontWeight="SemiBold" Margin="0,4,0,0"/>
-                        <TextBlock Text="Пермь" FontSize="12" Foreground="Gray" Margin="0,4,0,0"/>
-                        <TextBlock Text="09.12.2023" FontSize="12" Foreground="Gray" Margin="0,4,0,0"/>
+                        <TextBox Text="Победа" FontSize="14" Foreground="Gray"/>
+                        <TextBox x:Name="fromTime" Text="05:00" FontSize="16" FontWeight="SemiBold" Margin="0,4,0,0"/>
+                        <TextBox x:Name="from" Text="Пермь" FontSize="12" Foreground="Gray" Margin="0,4,0,0"/>
+                        <TextBox x:Name="fromDate" Text="09.12.2023" FontSize="12" Foreground="Gray" Margin="0,4,0,0"/>
                     </StackPanel>
 
                     <!-- Прибытие -->
                     <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,-10,0">
-                        <TextBlock Text="Победа" FontSize="14" Foreground="Gray"/>
-                        <TextBlock Text="05:00" FontSize="16" FontWeight="SemiBold" Margin="0,4,0,0"/>
-                        <TextBlock Text="Пермь" FontSize="12" Foreground="Gray" Margin="0,4,0,0"/>
-                        <TextBlock Text="09.12.2023" FontSize="12" Foreground="Gray" Margin="0,4,0,0"/>
+                        <TextBox Text="Победа" FontSize="14" Foreground="Gray"/>
+                        <TextBox x:Name="toTime" Text="05:00" FontSize="16" FontWeight="SemiBold" Margin="0,4,0,0"/>
+                        <TextBox x:Name="to" Text="Пермь" FontSize="12" Foreground="Gray" Margin="0,4,0,0"/>
+                        <TextBox x:Name="toDate" Text="09.12.2023" FontSize="12" Foreground="Gray" Margin="0,4,0,0"/>
                     </StackPanel>
 
                     <!-- Горизонтальная линия -->
@@ -66,16 +66,16 @@
                     <StackPanel Orientation="Horizontal" 
                                 HorizontalAlignment="Center" 
                                 VerticalAlignment="Center">
-                        <TextBlock Text="✈️" FontSize="16"/>
-                        <TextBlock Text="в пути 2 часа 55 минут" 
-                                   FontSize="12" 
+                        <TextBox Text="✈️" FontSize="16"/>
+                        <TextBox Text="в пути 2 часа 55 минут" 
+                                   FontSize="12" x:Name="way"
                                    Foreground="Gray" 
                                    Margin="8,0"/>
-                        <TextBlock Text="✈️" FontSize="16">
-                            <TextBlock.LayoutTransform>
+                        <TextBox Text="✈️" FontSize="16">
+                            <TextBox.LayoutTransform>
                                 <ScaleTransform ScaleX="-1"/>
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
+                            </TextBox.LayoutTransform>
+                        </TextBox>
                     </StackPanel>
                 </Grid>
 

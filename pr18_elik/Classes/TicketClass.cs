@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using pr18_elik.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,26 +8,31 @@ using System.Threading.Tasks;
 
 namespace pr18_elik.Classes
 {
-    public class TicketsClass
+    public class TicketsClass: Ticket
     {
-        // Стоимость
-        public string price { get; set; }
-        // Откуда
-        public string from { get; set; }
-        // Куда
-        public string to { get; set; }
-        // Время и дата вылета
-        public string time_start { get; set; }
-        // Время в пути
-        public string time_way { get; set; }
-
-        public TicketsClass(string from, string to, string price, string time_start, string time_way)
+         public TicketsClass(int Price, string From, string To, DateTime StartTime, DateTime EndTime) : base(Price, From, To, StartTime, EndTime) { }
+        public static List<TicketsClass> AllTickets()
         {
-            this.from = from;
-            this.to = to;
-            this.price = price;
-            this.time_start = time_start;
-            this.time_way = time_way;
+          
+            List<TicketsClass> AllTickets = new List<TicketsClass>();
+
+            
+
+            MySqlConnection connection = WorkingBD.Connection.OpenConnection();
+            MySqlDataReader ticketQuery = WorkingBD.Connection.Query("SELECT * FROM `Airlines`.`Tickets`;", connection);
+            while(ticketQuery.Read())
+            {
+                AllTickets.Add(new TicketsClass(
+                    ticketQuery.GetInt32(3),
+                    ticketQuery.GetString(1),
+                     ticketQuery.GetString(2),
+                     ticketQuery.GetDateTime(4),
+                     ticketQuery.GetDateTime(5)
+                    ));
+            }
+            WorkingBD.Connection.CloseConnection(connection);
+
+            return AllTickets;
         }
     }
 }

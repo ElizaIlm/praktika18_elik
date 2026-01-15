@@ -25,6 +25,7 @@ namespace pr18_elik
         {
             InitializeComponent();
             init = this;
+            OpenPage(new Pages.Main());
         }
         public void OpenPage(Page Page)
         {

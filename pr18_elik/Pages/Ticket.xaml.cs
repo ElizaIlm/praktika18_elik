@@ -1,4 +1,5 @@
-﻿using System;
+﻿using pr18_elik.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,23 @@ namespace pr18_elik.Pages
     /// </summary>
     public partial class Ticket : Page
     {
+        public List<TicketsClass> AllTickets;
+
         public Ticket(string From, string To)
         {
             InitializeComponent();
+            AllTickets = TicketsClass.AllTickets().FindAll(x =>
+                (x.From == From && To == "") ||
+                (From == "" && x.To == To) ||
+                (x.From == From && x.To == To));
+        }
+
+        public void CreateUI()
+        {
+            foreach (TicketsClass ticket in AllTickets)
+            {
+                parent.Children.Add(new Element.Item(ticket));
+            }
         }
     }
 }
